@@ -1,1 +1,71 @@
+//Using a For-Each Loop (Java 5 and later):
+//You can iterate through the entrySet() of the HashMap using a for-each loop to access both keys and values.
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class HashMapIteration {
+    public static void main(String[] args) {
+        // Create a HashMap
+        Map<String, Integer> hashMap = new HashMap<>();
+
+        // Add key-value pairs to the HashMap
+        hashMap.put("Alice", 25);
+        hashMap.put("Bob", 30);
+        hashMap.put("Charlie", 35);
+
+        // Iterate through the HashMap using a for-each loop
+        for (Map.Entry<String, Integer> entry : hashMap.entrySet()) {
+            String key = entry.getKey();
+            Integer value = entry.getValue();
+            System.out.println("Key: " + key + ", Value: " + value);
+        }
+    }
+}
+
+
+Using the Key Set:
+You can iterate through the keys of the HashMap and then retrieve the corresponding values using the get() method.
+import java.util.HashMap;
+import java.util.Map;
+
+public class HashMapIteration {
+    public static void main(String[] args) {
+        // Create a HashMap
+        Map<String, Integer> hashMap = new HashMap<>();
+
+        // Add key-value pairs to the HashMap
+        hashMap.put("Alice", 25);
+        hashMap.put("Bob", 30);
+        hashMap.put("Charlie", 35);
+
+        // Iterate through the keys and retrieve values
+        for (String key : hashMap.keySet()) {
+            Integer value = hashMap.get(key);
+            System.out.println("Key: " + key + ", Value: " + value);
+        }
+    }
+}
+Using Java 8 Streams (Java 8 and later):
+You can use Java 8 streams to iterate through the entrySet() and perform various operations on the elements.
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class HashMapIteration {
+    public static void main(String[] args) {
+        // Create a HashMap
+        Map<String, Integer> hashMap = new HashMap<>();
+
+        // Add key-value pairs to the HashMap
+        hashMap.put("Alice", 25);
+        hashMap.put("Bob", 30);
+        hashMap.put("Charlie", 35);
+
+        // Iterate through the HashMap using Java 8 streams
+        hashMap.forEach((key, value) -> {
+            System.out.println("Key: " + key + ", Value: " + value);
+        });
+    }
+}
 
