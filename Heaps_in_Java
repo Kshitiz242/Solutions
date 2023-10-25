@@ -1,0 +1,14 @@
+    public void insert(E element) {
+        heap.add(element);
+        int index = heap.size() - 1;
+
+        // Reorder the element to maintain max-heap property
+        while (index > 0) {
+            int parentIndex = (index - 1) / 2;
+            if (heap.get(index).compareTo(heap.get(parentIndex)) <= 0) {
+                break;
+            }
+            swap(index, parentIndex);
+            index = parentIndex;
+        }
+    }
